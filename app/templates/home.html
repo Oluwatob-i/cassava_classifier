@@ -40,13 +40,14 @@
     <form id='form' class='upload-box' >
             {% csrf_token %}
             <label for='upload'>
+                <div class='loader' id='loader' style='display:none'></div>
                 <p id='label'>click to upload an image </p>
-                <img src="{% static 'images/logo.png'%}" />
+                <img id='logo2' src="{% static 'images/logo.png'%}" />
             </label>
             <input id='upload' type='file'/>
-            <button>diagnose</button>
-        </form>
-     
+            <button id='diagnoseButton'>diagnose</button>
+    </form>
+    
 
     </div>
 

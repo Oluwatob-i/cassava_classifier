@@ -14,9 +14,11 @@ def home(request):
     return render(request,'home.html')
 
 def get_image(request):
+  
     image = Image.open(BytesIO(request.body))
-    print('hree')
+  
     pred = inf.predict(np.asarray(image))
+    print(pred)
     opts = {
         "0": "Cassava Bacterial Blight (CBB)",
         "1": "Cassava Brown Streak Disease (CBSD)",

@@ -50,12 +50,14 @@ nav p {
 .upload-box label p {
     color:  hsl(220, 50%, 80%);
     font-size: 18px;
-    padding-top: 24px !important;
+    padding-top: 12px !important;
     text-align: center;
 }
 .upload-box label img {
     width: 60%;
+    max-height: 80%;
     object-fit: cover;
+    border-radius: 4px;
 }
 .upload-box input {
     width: 0.001px;
@@ -71,8 +73,34 @@ nav p {
     font-family: 'Poppins';
     font-size: 18px;
 }
+.upload-box button:focus {
+    outline: none;
+}
+.settings-loader {
+    width: 48px !important;
+    height: 48px !important;
+   
+}
+.settings-loader svg {
+    color: hsl(323, 100%, 70%);
+}
 
-
+.loader {
+    border: 8px solid  hsl(225, 50%, 15%);
+    box-shadow: 0px 0px 32px hsla(323, 100%, 70%, .3);
+    border-top: 8px solid hsla(323, 100%, 70%, .2); /* Blue */
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+   
+    animation: spin .8s linear infinite;
+    
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 @media screen and (min-width:500px) {
     body {
         background-color: hsl(220, 50%, 10%) !important;
@@ -134,6 +162,7 @@ nav p {
     }
     .upload-box input {
         width: 0.001px;
+        transform: rotat
     }
     .upload-box button {
         width: 100%;
@@ -146,4 +175,5 @@ nav p {
         font-family: 'Poppins';
         font-size:24px;
     }
+
 }
