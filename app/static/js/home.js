@@ -26,7 +26,7 @@ form.onsubmit = (e)=> {
             :
             ++counter
             let dots = '';
-            
+
             Array(counter).fill(1).forEach(e=> dots += '.')
             diagnoseButton.innerText = `diagnosing${dots}`
         }, 300);
@@ -58,7 +58,7 @@ function sendImage(image) {
     .then(e=>e.json())
     .catch(e=>'')
     .then(e=> {
-        label.innerText = e;
+        label.innerText = e || 'upload a better image';
         logo2.style.display = 'block';
         loader.style.display = 'none';
         clearInterval(interval)
