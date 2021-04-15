@@ -1,5 +1,6 @@
 import json 
 import boto3
+import random
 
 from PIL import Image
 from io import BytesIO
@@ -21,14 +22,18 @@ def home(request):
     return render(request,'home.html')
 
 def get_image(request):
-  
-    image = Image.open(BytesIO(request.body))
+    image_bytes = BytesIO(request.body)
+   
+    image = Image.open(image_bytes)
     
-    pred = inf.predict(np.asarray(image))
     
+    pred = inf.predict(np.asarray(image))  
     con = float((pred[2].max()))
     confidence = (f"{con:.0%}")
-    print(confidence)
+  
+    rand = 'abcdefghijklmnopqrstuvwxyz1234567890'
+
+    s3.Bucket('cassava-classifier').put_object(Key=opts[pred[0][0]], Body=image_bytes)
     opts = {
         "0": "Cassava Bacterial Blight (CBB)",
         "1": "Cassava Brown Streak Disease (CBSD)",
@@ -36,6 +41,7 @@ def get_image(request):
         "3": "Cassava Mosaic Disease (CMD)",
         "4": "Healthy",
     }
+    image.close()
     return JsonResponse(opts[pred[0][0]] + ' ' + confidence ,safe=False)
 
 
