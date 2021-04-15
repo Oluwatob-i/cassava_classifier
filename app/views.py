@@ -1,4 +1,6 @@
 import json 
+import boto3
+
 from PIL import Image
 from io import BytesIO
 from django.shortcuts import render
@@ -6,9 +8,12 @@ from django.http import JsonResponse
 
 from fastai.vision.all import *
 
+# upload to s3
+s3 = boto3.resource('s3')
+
 # Create your views here.
 
-inf = load_learner('/home/azureuser/export.pkl')
+inf = load_learner('/home/ubuntu/export.pkl')
 
 def home(request):
     return render(request,'home.html')
