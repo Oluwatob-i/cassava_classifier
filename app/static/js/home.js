@@ -14,7 +14,7 @@ form.onsubmit = (e)=> {
     label.innerHTML= '';
     let count = 0;
   
-    if (file)  {
+    if (file && 'image/jpeg, image/jpg, image/png, image/PNG, image/JPG, image/JPEG'.includes(file.type)) {
         logo2.style.display = 'none';
         loader.style.display = 'block';
         

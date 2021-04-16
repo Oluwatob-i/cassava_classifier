@@ -52,7 +52,11 @@
                 <p id='label'>click to upload an image </p>
                 <img id='logo2' src="{% static 'images/logo.png'%}" />
             </label>
-            <input id='upload' type='file'/>
+            <input 
+                accept='image/*'
+                id='upload' 
+                type='file'
+            />
             <button id='diagnoseButton'>diagnose</button>
     </form>
     
