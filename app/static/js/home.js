@@ -40,6 +40,7 @@ form.onsubmit = (e)=> {
         } 
     } else {
         label.innerText = 'upload an image'
+       
     }
        
 }
