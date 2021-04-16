@@ -109,8 +109,8 @@ nav p {
     text-transform: capitalize; 
 }
 .result > .image-rd7 > .diagnosis > .header {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 400;
     color: hsl(220, 50%, 40%);
     margin: 0;
     padding: 0;
@@ -152,7 +152,7 @@ nav p {
     letter-spacing: 1px;
     display: flex;
     align-items: start;
-    padding:0
+    padding:0;
 }
 .result > .info > .confidence > p {
     margin-right: 8px;
@@ -165,6 +165,11 @@ nav p {
 .result >  .recommendations {
     display: flex;
     font-size: 14px !important;
+    margin: 0;
+    padding: 0 0 0 8px;
+    margin-bottom: -14px;
+    color:  hsl(220, 50%, 70%);
+    text-decoration: none;
 }
 .result .diagnose-again {
    background:  hsl(323, 100%, 70%);

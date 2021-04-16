@@ -1,91 +1,46 @@
+{% extends 'main.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='theme-color' content='hsl(220, 50%, 10%)'>
-    <link rel='stylesheet' type='text/css' href="{% static 'css/home.css' %}" >
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
-    <title>Dotlabs</title>
-    <script type='text/javascript'>
-        function getToken(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '='))
-                    {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                  }
-              }
-          }
-          return cookieValue;
-      }
-        var csrftoken = getToken('csrftoken');
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2VX8WQNGW"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-P2VX8WQNGW');
-    </script>
-</head>
-<body>
-    <nav>
-        <img class='logo' src="{% static 'images/logo.png'%}"/>
-        <p>dotlabs ai</p>
-    </nav>
-    <div class='page'>
-        <p class='header'>Cassava Disease Classifier</p>
-     
-    <form id='form' class='upload-box' >
-            {% csrf_token %}
-            <label for='upload'>
-                <div class='loader' id='loader' style='display:none'></div>
-                <p id='label'>click to upload an image </p>
-                <img id='logo2' src="{% static 'images/logo.png'%}" />
-            </label>
-            <input 
-                accept='image/*'
-                id='upload' 
-                type='file'
-            />
-            <button id='diagnoseButton'>diagnose</button>
-    </form>
-    
-    <div class='result'  id='result' style='display:none'>
-        
-        <div class='image-rd7'>
-            <img class='image' id='diagnosed-image' src="{% static 'images/logo.png'%}"/>
-            <div class='diagnosis'>
-                <p class='header'>Diagnosis</p>
-                <div class='status'>
-                    <p id='status'class=''></p><i id='icon'></i>
-                </div>
-            </div>  
-        </div>
-      
-        <div class='info'>
-            <p class='text-1' id='text-1'></p>
-            <p class='disease-name' id='disease-name'>Cassava Bacterial Blight</p>
-            <div class='confidence'><p>Confidence</p> <span id='confidence'>50%</span></div>
-        
-        </div>
+{% block body %}
+<div class='page'>
+    <p class='header'>Cassava Disease Classifier</p>
+ 
+<form id='form' class='upload-box' >
+        {% csrf_token %}
+        <label for='upload'>
+            <div class='loader' id='loader' style='display:none'></div>
+            <p id='label'>click to upload an image </p>
+            <img id='logo2' src="{% static 'images/logo.png'%}" />
+        </label>
+        <input 
+            accept='image/*'
+            id='upload' 
+            type='file'
+        />
+        <button id='diagnoseButton'>diagnose</button>
+</form>
 
-        <!--<div class='recommendations'><p>view recommendations</p></div>-->
-
-        <button class='diagnose-again' id='diagnose-again'>diagnose another</button>
+<div class='result'  id='result' style='display:none'>
+    
+    <div class='image-rd7'>
+        <img class='image' id='diagnosed-image' src="{% static 'images/logo.png'%}"/>
+        <div class='diagnosis'>
+            <p class='header'>Diagnosis</p>
+            <div class='status'>
+                <p id='status'class=''></p><i id='icon'></i>
+            </div>
+        </div>  
     </div>
+  
+    <div class='info'>
+        <p class='text-1' id='text-1'></p>
+        <p class='disease-name' id='disease-name'>Cassava Bacterial Blight</p>
+        <div class='confidence'><p>Confidence</p> <span id='confidence'>50%</span></div>
+    
     </div>
 
-</body>
-<script src="https://kit.fontawesome.com/6c13f47cd5.js" crossorigin="anonymous"></script>
-<script src="{% static 'js/home.js'%}" type='text/javascript'></script>
-</html>
+   <a  class='recommendations' >view recommendations</a>
+
+    <button class='diagnose-again' id='diagnose-again'>diagnose another</button>
+</div>
+</div>
+{% endblock %}

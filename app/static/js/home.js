@@ -85,7 +85,24 @@ function sendImage(image) {
             result.style.display = 'flex';
             text1.innerHTML =    (e.pred == 'Healthy' ? '' : 'Disease Name');
             diseaseName.innerHTML = e.pred;
-            confidence.innerHTML = e.confidence;
+            let counter = 0;
+            confidenceVal = parseInt(e.confidence);
+            let time = 50;
+            let interval = setInterval(()=>{
+                counter < confidenceVal
+                ?
+                counter++
+                :
+                stopInterval()
+                confidence.innerHTML =  `${counter}%`;
+             
+            }, time)
+
+            function stopInterval(){
+                clearInterval(interval)
+            }
+          
+
             statusIcon.className =   ( e.pred == 'Healthy' ?  'far fa-check-circle' : 'fas fa-exclamation diseased');
             status.innerHTML =   ( e.pred == 'Healthy' ?  'Healthy' : 'Diseased');
             diagnosedImage.src = reader.result;

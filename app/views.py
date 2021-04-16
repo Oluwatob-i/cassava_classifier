@@ -23,6 +23,10 @@ inf = load_learner(f'/home/{sys_username}/export.pkl')
 def home(request):
     return render(request,'home.html')
 
+def recommendation(request):
+
+    return render(request, 'recommendation.html')
+
 def get_image(request):
     image_bytes = BytesIO(request.body)
     image = Image.open(image_bytes)   
@@ -47,7 +51,7 @@ def get_image(request):
         image_name =  opts[pred[0][0]] +  '/' +  ''.join(rand) + f'-{(confidence.split("%")[0])}' + '.jpg'
 
 
-    s3.Bucket('cassava-classifier').put_object(Key=(image_name ), Body=request.body, ContentType='image/jpeg')
+    #s3.Bucket('cassava-classifier').put_object(Key=(image_name ), Body=request.body, ContentType='image/jpeg')
     image.close()
 
    
