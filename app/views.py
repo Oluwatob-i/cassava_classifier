@@ -40,11 +40,17 @@ def get_image(request):
     }
     rand = 'abcdefghijklmnopqrstuvwxyz1234567890'
     rand = (random.sample(rand, 10))
-    image_name =  opts[pred[0][0]] +  '/' +  ''.join(rand) + f'-{(confidence.split("%")[0])}' + '.jpg'
+    if not pred[0]:
+        image_name =  'no_prediction'+  '/' +  ''.join(rand) +  '.jpg'
+
+    else:
+        image_name =  opts[pred[0][0]] +  '/' +  ''.join(rand) + f'-{(confidence.split("%")[0])}' + '.jpg'
+
 
     s3.Bucket('cassava-classifier').put_object(Key=(image_name ), Body=request.body, ContentType='image/jpeg')
     image.close()
 
-    return JsonResponse(opts[pred[0][0]] + ' ' + confidence ,safe=False)
+   
+    return JsonResponse(opts[pred[0][0]] if pred[0] else '' + ' ' + confidence ,safe=False)
 
 
