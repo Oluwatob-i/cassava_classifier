@@ -60,9 +60,32 @@
             <button id='diagnoseButton'>diagnose</button>
     </form>
     
+    <div class='result'  id='result' style='display:none'>
+        
+        <div class='image-rd7'>
+            <img class='image' id='diagnosed-image' src="{% static 'images/logo.png'%}"/>
+            <div class='diagnosis'>
+                <p class='header'>Diagnosis</p>
+                <div class='status'>
+                    <p id='status'class=''></p><i id='icon'></i>
+                </div>
+            </div>  
+        </div>
+      
+        <div class='info'>
+            <p class='text-1' id='text-1'></p>
+            <p class='disease-name' id='disease-name'>Cassava Bacterial Blight</p>
+            <div class='confidence'><p>Confidence</p> <span id='confidence'>50%</span></div>
+        
+        </div>
 
+        <!--<div class='recommendations'><p>view recommendations</p></div>-->
+
+        <button class='diagnose-again' id='diagnose-again'>diagnose another</button>
+    </div>
     </div>
 
 </body>
+<script src="https://kit.fontawesome.com/6c13f47cd5.js" crossorigin="anonymous"></script>
 <script src="{% static 'js/home.js'%}" type='text/javascript'></script>
 </html>

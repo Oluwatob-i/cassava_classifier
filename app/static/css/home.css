@@ -30,12 +30,14 @@ nav p {
     margin-bottom: 128px;
 }
 
-.upload-box {
+.upload-box, .result {
     width: 96%;
     height: 360px;
     border-radius: 32px;
     box-shadow: 0px 0px 32px hsla(323, 100%, 70%, .3);
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .upload-box label {
@@ -75,6 +77,108 @@ nav p {
 }
 .upload-box button:focus {
     outline: none;
+}
+.result {
+    font-family: 'Poppins';
+    color:  hsl(220, 50%, 80%);
+    font-size: 18px;
+    padding-top: 12px !important;
+  
+}
+.result > .image-rd7{
+    margin: 20px 32px 32px 32px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.result > .image-rd7 > .image {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    margin-right: 32px;
+    max-height: unset;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px hsla(323, 100%, 70%, .3);
+}
+.result > .image-rd7 > .diagnosis  {
+    text-align: start;
+}
+.result > .image-rd7 > .diagnosis > p {
+    margin-top: 0px;  
+    padding: 0;
+    text-transform: capitalize; 
+}
+.result > .image-rd7 > .diagnosis > .header {
+    font-size: 16px;
+    font-weight: 600;
+    color: hsl(220, 50%, 40%);
+    margin: 0;
+    padding: 0;
+}
+.result > .image-rd7 > .diagnosis > .status  {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-top: -8px;
+}
+.result > .image-rd7 > .diagnosis > .status > i {
+    color: green;
+    margin-left: 8px;
+} 
+
+.result > .image-rd7 > .diagnosis > .status > .diseased {
+    font-size: 14px;
+    color: red;
+} 
+
+.result > .info {
+    padding: 8px;
+    padding-top: 0;
+    font-family: 'Poppins' !important;
+}
+.result > .info > .disease-name {
+    color:  hsl(323, 100%, 70%);
+   
+}
+.result > .info >  .text-1 {
+    font-size: 14px;
+    margin-bottom: -8px;
+    padding: 0;
+    color: hsl(220, 50%, 30%);
+}
+.result > .info > .confidence {
+    color:  hsl(220, 50%, 30%);
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: start;
+    padding:0
+}
+.result > .info > .confidence > p {
+    margin-right: 8px;
+    padding: 0;
+}
+.result > .info > .confidence > span {
+    font-size: 32px;
+    color: hsl(323, 100%, 70%);
+}
+.result >  .recommendations {
+    display: flex;
+    font-size: 14px !important;
+}
+.result .diagnose-again {
+   background:  hsl(323, 100%, 70%);
+   height: 32px;
+   width: fit-content;
+   font-size: 14px;
+   margin-top: auto;
+   float: right;
+   align-self: flex-end;
+   border-bottom-right-radius: 16px;
+   border: none;
+   color: hsl(225, 50%, 15%);
+   font-family: 'Poppins';
+  
 }
 .settings-loader {
     width: 48px !important;
@@ -134,7 +238,7 @@ nav p {
         margin-bottom: 128px;
     }
     
-    .upload-box {
+    .upload-box, .result {
         width: 400px;
         height: 360px;
         border-radius: 32px;
@@ -176,4 +280,6 @@ nav p {
         font-size:24px;
     }
 
+
+    
 }

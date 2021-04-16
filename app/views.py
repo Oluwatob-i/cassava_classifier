@@ -51,6 +51,6 @@ def get_image(request):
     image.close()
 
    
-    return JsonResponse(f'{opts[pred[0][0]]} {confidence}' if pred[0] else ''  ,safe=False)
+    return JsonResponse({'pred': opts[pred[0][0]], 'confidence': confidence}  if pred[0] else ''  ,safe=False)
 
 
