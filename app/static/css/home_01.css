@@ -1,5 +1,5 @@
 body {
-    background-color: hsl(220, 50%, 10%) !important;
+    background-color:  #fff;/*hsl(220, 50%, 10%) !important;*/
     font-family: 'Poppins' !important;
 }
 
@@ -16,6 +16,7 @@ nav p {
     font-size: 18px;
     color:hsla(323, 100%, 70%, .2);
     align-self: start;
+    display: none;
 }
 .page {
     display: flex;
@@ -24,7 +25,7 @@ nav p {
 }
 
 .page .header {
-    color:  hsl(220, 50%, 80%);
+    color:  #000;
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 128px;
@@ -50,7 +51,7 @@ nav p {
     justify-content: center;
 }
 .upload-box label p {
-    color:  hsl(220, 50%, 80%);
+    color:  #000;
     font-size: 18px;
     padding-top: 12px !important;
     text-align: center;
@@ -70,8 +71,8 @@ nav p {
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     border: none;
-    background:  hsl(225, 50%, 15%);
-    color:  hsl(220, 50%, 80%);
+    background: #000;
+    color:  #fff;
     font-family: 'Poppins';
     font-size: 18px;
 }
@@ -80,7 +81,7 @@ nav p {
 }
 .result {
     font-family: 'Poppins';
-    color:  hsl(220, 50%, 80%);
+    color:  #000;
     font-size: 18px;
     padding-top: 12px !important;
   
@@ -109,9 +110,9 @@ nav p {
     text-transform: capitalize; 
 }
 .result > .image-rd7 > .diagnosis > .header {
-    font-size: 24px;
-    font-weight: 400;
-    color: hsl(220, 50%, 40%);
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
     margin: 0;
     padding: 0;
 }
@@ -137,22 +138,22 @@ nav p {
     font-family: 'Poppins' !important;
 }
 .result > .info > .disease-name {
-    color:  hsl(323, 100%, 70%);
+    color:  hsl(323, 100%, 50%);
    
 }
 .result > .info >  .text-1 {
     font-size: 14px;
     margin-bottom: -8px;
     padding: 0;
-    color: hsl(220, 50%, 30%);
+    color: #000;
 }
 .result > .info > .confidence {
-    color:  hsl(220, 50%, 30%);
+    color:  #000;
     font-size: 12px;
     letter-spacing: 1px;
     display: flex;
     align-items: start;
-    padding:0;
+    padding:0
 }
 .result > .info > .confidence > p {
     margin-right: 8px;
@@ -160,19 +161,17 @@ nav p {
 }
 .result > .info > .confidence > span {
     font-size: 32px;
-    color: hsl(323, 100%, 70%);
+    color: hsl(323, 100%, 50%);
 }
 .result >  .recommendations {
     display: flex;
     font-size: 14px !important;
-    margin: 0;
-    padding: 0 0 0 8px;
-    margin-bottom: -14px;
-    color:  hsl(220, 50%, 70%);
+    padding-left: 8px;
     text-decoration: none;
+    color: #000;
 }
 .result .diagnose-again {
-   background:  hsl(323, 100%, 70%);
+   background:  #000;
    height: 32px;
    width: fit-content;
    font-size: 14px;
@@ -181,7 +180,7 @@ nav p {
    align-self: flex-end;
    border-bottom-right-radius: 16px;
    border: none;
-   color: hsl(225, 50%, 15%);
+   color: #fff;
    font-family: 'Poppins';
   
 }
@@ -212,7 +211,7 @@ nav p {
   }
 @media screen and (min-width:500px) {
     body {
-        background-color: hsl(220, 50%, 10%) !important;
+       
         font-family: 'Poppins' !important;
     }
     
@@ -227,7 +226,6 @@ nav p {
     }
     nav p {
         font-size: 24px;
-        color:hsla(323, 100%, 70%, .2);
         align-self: start;
     }
     .page {
@@ -237,7 +235,6 @@ nav p {
     }
     
     .page .header {
-        color:  hsl(220, 50%, 80%);
         font-size: 48px;
         font-weight: 500;
         margin-bottom: 128px;
@@ -247,7 +244,6 @@ nav p {
         width: 400px;
         height: 360px;
         border-radius: 32px;
-        box-shadow: 0px 0px 32px hsla(323, 100%, 70%, .3);
         padding: 0;
     }
     
@@ -261,7 +257,6 @@ nav p {
         justify-content: center;
     }
     .upload-box label p {
-        color:  hsl(220, 50%, 80%);
         font-size: 18px;
         padding-top: 24px !important;
     }
@@ -279,8 +274,6 @@ nav p {
         border-bottom-left-radius: 32px;
         border-bottom-right-radius: 32px;
         border: none;
-        background:  hsl(225, 50%, 15%);
-        color:  hsl(220, 50%, 80%);
         font-family: 'Poppins';
         font-size:24px;
     }

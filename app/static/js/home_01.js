@@ -13,6 +13,8 @@ const text1 = document.getElementById('text-1');
 const diseaseName = document.getElementById('disease-name')
 const statusIcon = document.getElementById('icon');
 const status = document.getElementById('status');
+const recommendationLink = document.getElementById('recommendation-link');
+
 
 diagnoseAgain.onclick = ()=> {
     result.style.display = 'none';
@@ -79,7 +81,6 @@ function sendImage(image) {
         loader.style.display = 'none';
         clearInterval(interval)
         diagnoseButton.innerText = 'diagnose';
-        console.log(e.pred)
         if (e.pred) {
             form.style.display = 'none';
             result.style.display = 'flex';
@@ -105,6 +106,16 @@ function sendImage(image) {
 
             statusIcon.className =   ( e.pred == 'Healthy' ?  'far fa-check-circle' : 'fas fa-exclamation diseased');
             status.innerHTML =   ( e.pred == 'Healthy' ?  'Healthy' : 'Diseased');
+
+            if (e.pred !== 'Healthy') {
+                const recommendationFor = {
+                       "Cassava Bacterial Blight (CBB)" : "cbb",
+                       "Cassava Brown Streak Disease (CBSD)": "cbsd",
+                       "Cassava Green Mottle (CGM)": "cgm",
+                       "Cassava Mosaic Disease (CMD)": "cmd"
+                }
+                recommendationLink.href = `/recommendation/?for=${recommendationFor[e.pred]}`
+            }
             diagnosedImage.src = reader.result;
         }
     })

@@ -1,0 +1,11 @@
+--2021-05-02 21:29:44--  https://media.istockphoto.com/photos/cassava-plant-field-picture-id508228445?k=6
+Resolving media.istockphoto.com (media.istockphoto.com)... 99.86.61.28, 99.86.61.32, 99.86.61.34, ...
+Connecting to media.istockphoto.com (media.istockphoto.com)|99.86.61.28|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 541316 (529K) [image/jpeg]
+Saving to: ‘banner-1.jpg’
+
+banner-1.jpg                              0%[                                                                                ]       0  --.-KB/s               banner-1.jpg                            100%[===============================================================================>] 528.63K  --.-KB/s    in 0.09s   
+
+2021-05-02 21:29:44 (5.61 MB/s) - ‘banner-1.jpg’ saved [541316/541316]
+
